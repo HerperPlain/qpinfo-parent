@@ -12,6 +12,7 @@
         <module>qpinfo-model</module>
         <module>qpinfo-task</module>
         <module>qpinfo-auth</module>
+        <module>mybatisGenerator</module>
     </modules>
     <packaging>pom</packaging>
 
