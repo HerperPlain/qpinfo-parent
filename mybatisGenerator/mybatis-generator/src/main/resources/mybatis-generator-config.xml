@@ -10,6 +10,7 @@
     <context id="context" targetRuntime="MyBatis3" defaultModelType="flat">
         <!-- 生成limit分页属性	【扩展插件】-->
         <plugin type="org.mybatis.plugin.PaginationPlugin"/>
+        <plugin type="org.mybatis.plugin.SerializablePlugin"/>
         <!-- 生成数据库字段注释及自定义注释 【扩展插件】 -->
         <commentGenerator type="org.mybatis.generator.MyCommentGenerator">
             <!-- 格式化java代码 -->

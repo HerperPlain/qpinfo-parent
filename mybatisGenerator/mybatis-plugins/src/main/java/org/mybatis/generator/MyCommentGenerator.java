@@ -13,8 +13,8 @@ import java.util.List;
 
 /**
  * @author 黄朴（Herper.Plain）
- * @Date 2018/2/5 上午10:54
- * @Company 青朴信息技术服务有限公司
+ * @date 2018/2/5 上午10:54
+ * @company 默云网络科技有限公司
  */
 public class MyCommentGenerator extends DefaultCommentGenerator {
     @Override
@@ -39,9 +39,9 @@ public class MyCommentGenerator extends DefaultCommentGenerator {
         topLevelClass.addJavaDocLine("/**");
         topLevelClass.addJavaDocLine(" * @author 黄朴（Herper.Plain)  ");
         topLevelClass.addJavaDocLine(" * @studio 默云工作室 ");
-        topLevelClass.addJavaDocLine(" * @company 青朴信息技术服务有限公司 ");
-        topLevelClass.addJavaDocLine(" * "+introspectedTable.getFullyQualifiedTable());
-        topLevelClass.addJavaDocLine(" * "+new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+        topLevelClass.addJavaDocLine(" * @company 默云网络科技有限公司 ");
+        topLevelClass.addJavaDocLine(" * @table "+introspectedTable.getFullyQualifiedTable());
+        topLevelClass.addJavaDocLine(" * @Date "+new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         topLevelClass.addJavaDocLine(" */");
     }
 

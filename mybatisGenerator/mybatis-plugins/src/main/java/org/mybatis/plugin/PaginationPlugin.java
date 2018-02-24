@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author 黄朴（Herper.Plain）
  * @Date 2018/2/5 上午10:39
- * @Company 青朴信息技术服务有限公司
+ * @company 默云网络科技有限公司
  */
 public class PaginationPlugin extends PluginAdapter {
     @Override
