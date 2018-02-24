@@ -6,6 +6,7 @@ import com.qpinfo.auth.service.SysIconService;
 import com.qpinfo.enums.ResponseEnum;
 import com.qpinfo.exception.BizException;
 import com.qpinfo.utils.Assertion;
+import com.qpinfo.utils.DataConvertUtil;
 import com.qpinfo.vo.PageResponse;
 import com.qpinfo.vo.Request;
 import com.qpinfo.vo.Response;
@@ -71,21 +72,13 @@ public class SysIconController  extends BaseController{
     }
     @RequestMapping(value = "/delete", produces = MediaType.APPLICATION_JSON_UTF8_VALUE , method =RequestMethod.POST)
     public Response delete(@RequestBody Request dto){
-        logger.info("request queryById params={}",dto);
+        logger.info("request delete params={}",dto);
         Assertion.isTrue(dto !=null,"参数不能为空");
         Assertion.notEmpty(dto.getId(),"查询ID参数不能为空");
         String id  = dto.getId();
         String[] ids = id.split(",");
         SysIconExample example = new SysIconExample();
-        example.createCriteria().andIdIn(convert(ids));
+        example.createCriteria().andIdIn(DataConvertUtil.convert(ids));
         return new Response(ResponseEnum.SUCCESS);
-    }
-
-    public List<Integer> convert(String[] ids){
-        List<Integer> dataList = new ArrayList<>();
-        for (String id : ids ){
-            dataList.add(Integer.parseInt(id));
-        }
-        return dataList;
     }
 }

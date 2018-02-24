@@ -10,10 +10,9 @@ import java.nio.charset.Charset;
 
 
 /**
- * Created with antnest-platform
- * User: chenyuan
- * Date: 12/24/14
- * Time: 10:39 AM
+ * @author 黄朴（Herper.Plain）
+ * @date  2018/2/5 下午7:58
+ * @company 默云网络科技有限公司
  */
 public class HttpHelper {
 
