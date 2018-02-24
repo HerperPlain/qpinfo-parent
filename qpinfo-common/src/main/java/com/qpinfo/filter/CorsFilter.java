@@ -1,6 +1,7 @@
 package com.qpinfo.filter;
 
 import com.qpinfo.utils.Detect;
+import com.qpinfo.utils.HttpHelper;
 import com.qpinfo.utils.PropertiesUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +14,8 @@ import java.io.IOException;
 
 /**
  * @author 黄朴（Herper.Plain）
- * @Date 2018/2/7 下午8:34
- * @Company 青朴信息技术服务有限公司
+ * @date 2018/2/7 下午8:34
+ * @company 默云网络科技有限公司
  */
 @Component
 public class CorsFilter  implements Filter {
@@ -66,7 +67,8 @@ public class CorsFilter  implements Filter {
             }else{
                 // 防止流读取一次后就没有了, 所以需要将流继续写出去
                 ServletRequest requestWrapper = new BodyReaderHttpServletRequestWrapper(httpServletRequest, httpServletResponse);
-//				String body = HttpHelper.getBodyString(requestWrapper);
+				String body = HttpHelper.getBodyString(requestWrapper);
+				logger.info("request body 【{}】",body);
                 filterChain.doFilter(requestWrapper, servletResponse);
             }
             filterChain.doFilter(httpServletRequest, httpServletResponse);

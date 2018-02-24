@@ -19,7 +19,9 @@ import java.net.URLDecoder;
 import java.nio.charset.Charset;
 
 /**
- * Created with antnest-platform
+ * @author 黄朴（Herper.Plain）
+ * @Date 2018/2/7 下午8:34
+ * @company 默云网络科技有限公司
  */
 public class BodyReaderHttpServletRequestWrapper extends HttpServletRequestWrapper {
 
