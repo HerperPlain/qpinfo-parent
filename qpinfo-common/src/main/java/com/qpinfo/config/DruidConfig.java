@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -19,8 +20,9 @@ import java.sql.SQLException;
  * 数据库连接池
  * @author 黄朴（Herper.Plain）
  * @Date 2018/2/1 下午12:10
- * @Configuration
+ *
  */
+@Configuration
 public class DruidConfig {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
@@ -34,7 +36,7 @@ public class DruidConfig {
 	@Value("${spring.datasource.password}")
 	private String password;
 
-	@Value("${spring.datasource.driver-class-name}")
+	@Value("${spring.datasource.driverClassName}")
 	private String driverClassName;
 
 	@Value("${spring.datasource.initialSize}")

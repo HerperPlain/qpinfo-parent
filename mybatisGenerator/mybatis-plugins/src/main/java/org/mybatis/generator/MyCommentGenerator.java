@@ -39,7 +39,7 @@ public class MyCommentGenerator extends DefaultCommentGenerator {
         topLevelClass.addJavaDocLine("/**");
         topLevelClass.addJavaDocLine(" * @author 黄朴（Herper.Plain)  ");
         topLevelClass.addJavaDocLine(" * @studio 默云工作室 ");
-        topLevelClass.addJavaDocLine(" * @company 青朴信息技术服务又想公司 ");
+        topLevelClass.addJavaDocLine(" * @company 青朴信息技术服务有限公司 ");
         topLevelClass.addJavaDocLine(" * "+introspectedTable.getFullyQualifiedTable());
         topLevelClass.addJavaDocLine(" * "+new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         topLevelClass.addJavaDocLine(" */");

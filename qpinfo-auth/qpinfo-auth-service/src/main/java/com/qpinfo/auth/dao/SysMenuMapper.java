@@ -1,16 +1,19 @@
-package com.data.mapper;
+package com.qpinfo.auth.dao;
 
 import com.qpinfo.auth.pojo.SysMenu;
 import com.qpinfo.auth.pojo.SysMenuExample;
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+@Mapper
 public interface SysMenuMapper {
     long countByExample(SysMenuExample example);
 
     int deleteByExample(SysMenuExample example);
 
-    int deleteByPrimaryKey(@Param("meunId") String meunId, @Param("id") String id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(SysMenu record);
 
@@ -18,7 +21,7 @@ public interface SysMenuMapper {
 
     List<SysMenu> selectByExample(SysMenuExample example);
 
-    SysMenu selectByPrimaryKey(@Param("meunId") String meunId, @Param("id") String id);
+    SysMenu selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") SysMenu record, @Param("example") SysMenuExample example);
 

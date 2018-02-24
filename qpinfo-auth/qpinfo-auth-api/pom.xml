@@ -54,13 +54,13 @@
 	</profiles>
 
 	<build>
-		<finalName>athleticsMessageApi</finalName>
+		<finalName>qpinfoAuthApi</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.honglu.MessageApplication</mainClass>
+					<mainClass>com.qpinfo.QpinfoAuthApiApplication</mainClass>
 				</configuration>
 				<executions>
 					<execution>

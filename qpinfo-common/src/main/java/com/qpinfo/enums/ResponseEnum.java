@@ -6,7 +6,7 @@ package com.qpinfo.enums;
  * @Company 青朴信息技术服务有限公司
  */
 public enum  ResponseEnum {
-    SUCCESS(2000,"成功"),
+    SUCCESS(2000,"操作成功"),
     FAIL_SERVER(5000,"业务服务数据请求不合法!"),
     ERROR_PARAMS(5010,"请求参数不合法！"),
     BAD_REQUEST(4010,"请求不合法！"),

@@ -2,11 +2,13 @@ package com.qpinfo.vo;
 
 import com.qpinfo.enums.ResponseEnum;
 
+import java.io.Serializable;
+
 /**
  * @author 黄朴（Herper.Plain）
  * @Date 2018/1/30 下午2:27
  */
-public class Response {
+public class Response implements Serializable {
     private int code;
     private String message;
     private Object data;
@@ -43,7 +45,7 @@ public class Response {
     public void setData(Object data) {
         this.data = data;
     }
-    public Response date(Object data){
+    public Response data(Object data){
         this.data = data;
         return this;
     }

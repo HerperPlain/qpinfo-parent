@@ -22,10 +22,11 @@ import java.util.Date;
 public class HttpAspect {
 	Logger logger = LoggerFactory.getLogger(HttpAspect.class);
 	
-	/**pppp
+	/**
+	 *
 	 * 定义切点为controller目录下的所有类的所有公共方法
 	 */
-	@Pointcut("execution(public * com.qpinfo.*.controller.*.*(..))")
+	@Pointcut("execution(public * com.qpinfo.controller.*.*(..))")
 	public void log() {
 	}
 	
