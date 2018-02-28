@@ -4,6 +4,9 @@ import com.qpinfo.auth.dao.SysMenuMapper;
 import com.qpinfo.auth.pojo.SysMenu;
 import com.qpinfo.auth.pojo.SysMenuExample;
 import com.qpinfo.auth.service.SysMenuService;
+import com.qpinfo.utils.Detect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,6 +19,7 @@ import java.util.List;
  */
 @Service
 public class SysMenuServiceImpl implements SysMenuService {
+    private Logger logger = LoggerFactory.getLogger(SysMenuServiceImpl.class);
     @Resource
     SysMenuMapper baseDao;
 
@@ -26,6 +30,13 @@ public class SysMenuServiceImpl implements SysMenuService {
 
     @Override
     public int save(SysMenu model) {
+        Integer id = model.getId();
+        logger.info(" start save SysMenu params [{}] ，id is empty 【{}】",model, Detect.notEmpty(id));
+        if(Detect.isPositive(id)){
+            logger.info(" ==========  id is not empty excute update =========");
+            return baseDao.updateByPrimaryKeySelective(model);
+        }
+        logger.info(" ==========  id is  empty excute insert =========");
         return baseDao.insertSelective(model);
     }
 

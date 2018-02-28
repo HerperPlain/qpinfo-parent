@@ -13,6 +13,11 @@ import java.util.List;
  */
 public class DataConvertUtil {
 
+    /**
+     *  字符串数组转换为数字集合
+     * @param ids
+     * @return
+     */
     public static List<Integer> convert(String[] ids){
         List<Integer> dataList = new ArrayList<>();
         for (String id : ids ){

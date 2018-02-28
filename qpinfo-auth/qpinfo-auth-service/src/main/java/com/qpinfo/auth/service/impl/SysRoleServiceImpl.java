@@ -1,9 +1,9 @@
 package com.qpinfo.auth.service.impl;
 
-import com.qpinfo.auth.dao.SysIconMapper;
-import com.qpinfo.auth.pojo.SysIcon;
-import com.qpinfo.auth.pojo.SysIconExample;
-import com.qpinfo.auth.service.SysIconService;
+import com.qpinfo.auth.dao.SysRoleMapper;
+import com.qpinfo.auth.pojo.SysRole;
+import com.qpinfo.auth.pojo.SysRoleExample;
+import com.qpinfo.auth.service.SysRoleService;
 import com.qpinfo.utils.Detect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,50 +14,55 @@ import java.util.List;
 
 /**
  * @author 黄朴（Herper.Plain）
- * @Date 2018/2/20 下午2:20
- * @Company 青朴信息技术服务有限公司
+ * @date 2018/2/28 下午6:32
+ * @studio 默云工作室
+ * @company 默云网络科技有限公司
+ * @project qpinfo-parent
+ * @package com.qpinfo.auth.service.impl
  */
 @Service
-public class SysIconServiceImpl implements SysIconService {
-    Logger logger = LoggerFactory.getLogger(SysIconServiceImpl.class);
+public class SysRoleServiceImpl implements SysRoleService{
+
+    private Logger logger = LoggerFactory.getLogger(SysRoleServiceImpl.class);
+
     @Autowired
-    SysIconMapper baseDao;
+    SysRoleMapper baseDao;
 
     @Override
-    public int insert(SysIcon model) {
+    public int insert(SysRole model) {
         return baseDao.insert(model);
     }
 
     @Override
-    public int save(SysIcon model) {
+    public int save(SysRole model) {
         Integer id = model.getId();
-        logger.info(" start save SysIcon params [{}] ，id is empty 【{}】",model,Detect.notEmpty(id));
+        logger.info(" start save SysRole params [{}] ，id is empty 【{}】",model, Detect.notEmpty(id));
         if(Detect.isPositive(id)){
             logger.info(" ==========  id is not empty excute update =========");
-           return baseDao.updateByPrimaryKeySelective(model);
+            return baseDao.updateByPrimaryKeySelective(model);
         }
         logger.info(" ==========  id is  empty excute insert =========");
         return baseDao.insertSelective(model);
     }
 
     @Override
-    public int delete(SysIconExample example) {
+    public int delete(SysRoleExample example) {
         return baseDao.deleteByExample(example);
     }
 
     @Override
-    public List<SysIcon> list(SysIconExample example) {
+    public List<SysRole> list(SysRoleExample example) {
         return baseDao.selectByExample(example);
     }
 
     @Override
-    public List<SysIcon> queryPage(SysIconExample example) {
+    public List<SysRole> queryPage(SysRoleExample example) {
         return baseDao.selectByExample(example);
     }
 
     @Override
-    public SysIcon query(SysIconExample example) {
-        List<SysIcon> data = baseDao.selectByExample(example);
+    public SysRole query(SysRoleExample example) {
+        List<SysRole> data = baseDao.selectByExample(example);
         if(data!=null && data.size()>0){
             return data.get(0);
         }
